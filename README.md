@@ -1,1 +1,1 @@
-# threedee
+# GBA emulator

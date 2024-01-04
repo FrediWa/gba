@@ -1,27 +1,35 @@
 #include <stdio.h>
-#include <SDL2/SDL.h>
+#include <stdlib.h>
 
 #include "gba.h"
 
 int main(int argc, char* argv[])
 {
+    // Check args.
     if(argc < 2)
     {
         perror("Input file needed");
         return 1;
     }
+
+    // Open and check file.
     FILE* file = fopen(argv[1], "r");
-    
     if (file == NULL) {
         perror("Error opening file");
         return 1;
     }
 
-    unsigned char buffer[2]; 
+    // Init memory.
+    int RAM[288*1024] = {0};
+    int VRAM[96*1024] = {0};
 
-    while (fread(buffer, sizeof(unsigned char), 2, file) == 2) {
-        printf("%02x: %02x\n", buffer[0], buffer[1]);
-    }
+    if(&RAM[0] == &VRAM[0]){};
+
+    // Init CPU.
+    CPU* cpu = malloc(sizeof(CPU));
+
+    cpu->flags = 0;
+    cpu->state = STATE_ARM;
 
     // Main loop.
     while(1)
