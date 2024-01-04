@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "gba.h"
+#include "core/cpu.h"
 
 int main(int argc, char* argv[])
 {

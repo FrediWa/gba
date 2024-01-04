@@ -11,5 +11,18 @@
 ### Acronyms
 - CPSR: Current Program Status Register 
 ## CPSR
-
+- 0-4: Operating mode
+- 5: Thumb state
+- 6: Fast interrupt disable (F)
+- 7: Interrupt disable (I)
+- 8: Geographical flag (F)
+- 9: Geographical flag (I)
+- 10-24: Reserve bits
+- 25: Geographical flag (G)
+- 26: Geographical flag (J)
+- 27: Saturation flag (Q)
+- 28: Overflow flag (V)
+- 29: Carry flag (C)
+- 30: Zero flag (Z)
+- 31: Negative flag (N)
 
